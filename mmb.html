@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Team</title>
+    
+    <style>
+        .paragraph {
+            line-height: 2; /* Tăng khoảng cách dòng gấp đôi */
+        }
+    </style>
+    <style>
+        .blue-text { color: rgb(76, 143, 231); }
+        .yellow-text { color: rgb(205, 216, 57); }
+        .green-text { color: rgb(82, 203, 240); }
+        .gradient-text { 
+            background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            background: black;
+            overflow: hidden;
+        }
+        .galaxy {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle, rgb(157, 40, 180) 0%, rgb(15, 6, 6) 100%);
+        }
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        .stars span {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 0 5px white;
+            animation: twinkle 2s infinite;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        .team-container {
+            position: relative;
+            z-index: 10;
+            padding: 50px 20px;
+        }
+        .member {
+            margin: 20px;
+            display: inline-block;
+            padding: 20px;
+            background: rgba(56, 24, 236, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(171, 153, 182, 0.3);
+            transition: transform 0.3s;
+        }
+        .member:hover {
+            transform: scale(1.1);
+        }
+        .member {
+    margin: 20px;
+    display: inline-block;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s;
+    text-align: center;
+    width: 200px;
+}
+
+.member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgb(63, 75, 240);
+    box-shadow: 0 0 8px rgba(248, 2, 2, 0.6);
+}
+
+.member p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+    </style>
+</head>
+<body>
+    <div class="galaxy"></div>
+    <div class="stars" id="stars"></div>
+    <div class="team-container">
+       
+        <h1><b>My team</b> </h1>
+        
+        <div class="member">
+            <img src="images/traidep.jpg" alt="Nguyễn Danh Đức">
+            <p class="yellow-text"> <b>Nguyễn Danh Đức</b> </p>
+            <p class="blue-text"> Sở thích: Thu hút mẹ người khác </p>
+        </div>
+        <div class="member">
+            <img src="images/chọngungcho.jpg" alt="Châu Minh Anh">
+            <p class="yellow-text"> <b>Châu Minh Anh</b></p>
+            <p class="blue-text"> Sở thích: femboy </p>
+        </div>
+        <div class="member">
+            <img src="images/aoxanh.jpg" alt="Cao Hồng Đức">
+            <p class="yellow-text"> <b>Cao Hồng Đức</b> </p>
+            <p class="blue-text"> Sở thích: 3some </p>
+        </div>
+        <div class="member">
+            <img src="images/aoxanh.jpg" alt="Cao Hồng Đức">
+            <p class="yellow-text"> <b>Phạm duy</b> </p>
+            <p class="blue-text"> Sở thích: 3some </p>
+        </div>
+       
+    </div>
+   
+    <script>
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement('span');
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight;
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                starsContainer.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+    
+    
+</body>
+</html>
